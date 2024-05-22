@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>會員中心</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+  <body>
+    <%- include('./layout/header'); -%>
+    <!-- 背景光源 -->
+    <div class="bg-Light-blue">
+      <div class="bg-Light-white"></div>
+    </div>
+    <div class="bg-Light-green"></div>
+    <!-- 內容開始 -->
+    <div class="layout d-flex">
+      <div class="layout-left d-none d-lg-block z-2">
+        <%- include('./layout/navMenu'); -%>
+      </div>
+      <div class="layout-content">
+        <!-- 我的資料 -->
+        <div
+          id="myInfo"
+          class="container blueShadow bg-dark border border-2 mt-38 ms-75"
+          style="scroll-margin-top: 152px"
+        >
+          <div class="px-21 pt-14 pb-25">
+            <div class="d-flex justify-content-between mb-lg-8">
+              <h5>我的資料</h5>
+              <div>
+                <a href="editMemberProfile.html"
+                  >編輯<i class="fa-solid fa-pencil fs-7 ms-2"></i
+                ></a>
+              </div>
+            </div>
+            <form action="" class="row justify-content-between">
+              <div class="col-3">
+                <label for="memberAccount" class="form-label">帳號</label>
+                <input
+                  type="email"
+                  class="form-control mb-lg-7 box-shadow bg-secondary2 bg-opacity-30 border-0"
+                  id="memberAccount"
+                  value="magicfox@gmail.com"
+                  aria-describedby="memberAccount"
+                  readonly
+                />
+                <label for="memberName" class="form-label">使用者名稱</label>
+                <input
+                  type="text"
+                  class="form-control mb-lg-7 box-shadow bg-secondary2 bg-opacity-30 border-0"
+                  id="memberName"
+                  value="魔法狐狸"
+                  aria-describedby="memberName"
+                  readonly
+                />
+                <label for="memberPassword" class="form-label">密碼</label>
+                <input
+                  type="password"
+                  class="form-control mb-lg-7 box-shadow bg-secondary2 bg-opacity-30 border-0"
+                  id="memberPassword"
+                  value="**********"
+                  aria-describedby="memberPassword"
+                  readonly
+                />
+              </div>
+              <div class="col-4">
+                <div class="d-flex justify-content-between">
+                  <label for="memberAvatar" class="form-label">大頭貼</label>
+                  <span id="memberThumb" class="text-primary">
+                    3526
+                    <i class="fa-regular fa-thumbs-up ms-1 text-primary"></i>
+                  </span>
+                </div>
+                <img id="memberAvatar" src="" alt="member-avatar" />
+              </div>
+              <div class="col-3">
+                <div class="mb-lg-7">
+                  <p class="mb-2">牌位</p>
+                  <span id="memberRank" class="badge bg-white text-dark fs-6"
+                    >銅</span
+                  >
+                </div>
+                <div class="mb-lg-7">
+                  <p class="mb-2">擅長位置</p>
+                  <span
+                    id="memberPosition"
+                    class="badge bg-white text-dark fs-6"
+                    >TOP</span
+                  >
+                </div>
+                <div>
+                  <p class="mb-2">擅長英雄</p>
+                  <div class="parallelogramHero-1 w-100">
+                    <div
+                      id="memberHero"
+                      class="parallelogramContent-1 teamCardHeroBg-1"
+                      style="
+                        background-image: url(./images/champion/ashe.jpg);
+                      "
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+
+        <!-- 評價資訊 -->
+        <h2
+          id="myEvaluate"
+          class="position-relative fw-black fs-11 fs-md-2 mt-md-18 mb-md-5"
+          style="scroll-margin-top: 152px"
+        >
+          <div class="titleParallelogram-1 z-n1"></div>
+          評價資訊
+        </h2>
+        <div class="swiper-father position-relative mt-10">
+          <div id="evaluateSwiper" class="swiper blueShadow">
+            <div class="swiper-wrapper evaluateCard">
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                目前沒有對玩家點過讚
+              </h4>
+            </div>
+          </div>
+          <div
+            class="swiper-button-next position-absolute"
+            id="swiper-button-next3"
+            style="right: -60px"
+          ></div>
+          <div
+            class="swiper-button-prev position-absolute"
+            id="swiper-button-prev3"
+            style="left: -60px"
+          ></div>
+          <div
+            class="swiper-pagination position-absolute"
+            id="swiper-pagination3"
+            style="bottom: -44px"
+          ></div>
+        </div>
+
+        <!-- 好友名單 -->
+        <h2
+          id="myfriendList"
+          class="position-relative fw-black fs-11 fs-md-2 mt-md-18 mb-md-5"
+          style="scroll-margin-top: 152px"
+        >
+          <div class="titleParallelogram-1 z-n1"></div>
+          好友名單
+        </h2>
+        <div class="swiper-father position-relative mt-10">
+          <div id="friendListSwiper" class="swiper blueShadow">
+            <div class="swiper-wrapper friendCard">
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                好友名單目前是空的
+              </h4>
+            </div>
+          </div>
+          <div
+            class="swiper-button-next position-absolute"
+            id="swiper-button-next4"
+            style="right: -60px"
+          ></div>
+          <div
+            class="swiper-button-prev position-absolute"
+            id="swiper-button-prev4"
+            style="left: -60px"
+          ></div>
+          <div
+            class="swiper-pagination position-absolute"
+            id="swiper-pagination4"
+            style="bottom: -44px"
+          ></div>
+        </div>
+
+        <!-- 黑名單 -->
+        <h2
+          id="myblackList"
+          class="position-relative fw-black fs-11 fs-md-2 mt-md-18 mb-md-5"
+          style="scroll-margin-top: 152px"
+        >
+          <div class="titleParallelogram-1 z-n1"></div>
+          黑名單
+        </h2>
+        <div class="swiper-father position-relative mt-10">
+          <div id="blackListSwiper" class="swiper blueShadow">
+            <div class="swiper-wrapper blackCard">
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                黑名單目前是空的
+              </h4>
+            </div>
+          </div>
+          <div
+            class="swiper-button-next position-absolute"
+            id="swiper-button-next5"
+            style="right: -60px"
+          ></div>
+          <div
+            class="swiper-button-prev position-absolute"
+            id="swiper-button-prev5"
+            style="left: -60px"
+          ></div>
+          <div
+            class="swiper-pagination position-absolute"
+            id="swiper-pagination5"
+            style="bottom: -44px"
+          ></div>
+        </div>
+
+        <!-- 歷史組隊紀錄 -->
+        <div class="d-flex justify-content-between mt-md-18 mb-md-5">
+          <h2
+            id="myHistoricalTeamRecords"
+            class="position-relative fw-black fs-11 fs-md-2"
+            style="scroll-margin-top: 152px"
+          >
+            <div class="titleParallelogram-1 z-n1"></div>
+            歷史組隊紀錄
+          </h2>
+          <!-- <a
+            href="historicalTeamRecords.html"
+            class="fs-4 fw-medium d-none d-md-block px-14 py-3"
+          >
+            更多隊伍
+            <i class="fa-solid fa-angle-right me-4"></i>
+          </a> -->
+        </div>
+        <div class="swiper-father position-relative mt-10">
+          <div id="historicalTeamRecordsSwiper" class="swiper blueShadow">
+            <div class="swiper-wrapper historicalCard">
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                目前沒有加入過隊伍
+              </h4>
+          <div
+            class="swiper-button-next position-absolute"
+            id="swiper-button-next6"
+            style="right: -60px"
+          ></div>
+          <div
+            class="swiper-button-prev position-absolute"
+            id="swiper-button-prev6"
+            style="left: -60px"
+          ></div>
+          <div
+            class="swiper-pagination position-absolute"
+            id="swiper-pagination6"
+            style="bottom: -44px"
+          ></div>
+        </div>
+      </div>
+
+      <div class="layout-right d-none d-lg-block"></div>
+    </div>
+
+    <%- include('./layout/footer'); -%> <%- include('./layout/toTopBtn'); -%>
+
+    <script
+      src="https://kit.fontawesome.com/8eab62e458.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/memberInfo.js"></script>
+    <script type="module" src="../assets/js/memberCenter.js"></script>
+  </body>
+</html>

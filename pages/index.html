@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LOL 組隊大師</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+  </head>
+
+  <body style="overflow-x: hidden">
+    <%- include('./layout/header'); -%>
+    <span class="BG-Light-green"></span>
+    <span class="BG-Light-blue"></span>
+    <span class="BG-Light-blue"></span>
+    <span class="BG-Light-white"></span>
+
+    <div class="banner d-flex justify-content-center">
+      <div class="banner-text">
+        <a href="teamList.html"
+          ><button type="button">
+            <p>立即組隊</p>
+          </button></a
+        >
+      </div>
+    </div>
+    <div class="line mt-md-10"></div>
+
+    <div class="container step">
+      <div class="step-bg"></div>
+      <a href="buildTeam.html"
+        ><button type="button">
+          <p>立即開始組隊</p>
+        </button></a
+      >
+    </div>
+
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="popular-teams" data-aos="fade-right">
+          <div class="popular-teams-bg"></div>
+          <div class="popular-teams-title fs-2 fw-bold">熱門隊伍</div>
+        </div>
+        <a href="./teamList.html" class="more-btn" data-aos="fade-left">
+          <p>更多隊伍</p>
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
+      </div>
+      <div
+        class="swiper-father position-relative mt-10 opacity-100"
+        data-aos="zoom-in-up"
+      >
+        <div id="popularTeamsSwiper" class="swiper">
+          <div class="swiper-wrapper popularTeamsCard opacity-100"></div>
+        </div>
+        <div
+          class="swiper-button-next position-absolute"
+          id="swiper-button-next1"
+          style="right: -60px"
+        ></div>
+        <div
+          class="swiper-button-prev position-absolute"
+          id="swiper-button-prev1"
+          style="left: -60px"
+        ></div>
+        <div
+          class="swiper-pagination position-absolute"
+          id="swiper-pagination1"
+          style="bottom: -44px"
+        ></div>
+      </div>
+    </div>
+    <div class="line1"></div>
+    <div class="container mt-38">
+      <div class="d-flex justify-content-between align-items-center">
+        <div class="popular-palyers" data-aos="fade-right">
+          <div class="popular-palyers-bg"></div>
+          <div class="popular-palyers-title fs-2 fw-bold">熱門隊友</div>
+        </div>
+        <a href="./playerList.html" class="more-btn" data-aos="fade-left">
+          <p>更多玩家</p>
+          <i class="fa-solid fa-angle-right"></i>
+        </a>
+      </div>
+      <div class="popular-player">
+        <div
+          class="swiper-father position-relative mt-10"
+          data-aos="zoom-in-up"
+        >
+          <div id="popularPlayersSwiper" class="swiper">
+            <div class="swiper-wrapper popularPlayersCard"></div>
+          </div>
+          <div
+            class="swiper-button-next position-absolute"
+            id="swiper-button-next2"
+            style="right: -60px"
+          ></div>
+          <div
+            class="swiper-button-prev position-absolute"
+            id="swiper-button-prev2"
+            style="left: -60px"
+          ></div>
+          <div
+            class="swiper-pagination position-absolute"
+            id="swiper-pagination2"
+            style="bottom: -44px"
+          ></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="cta-banner pt-20 mb-20">
+      <div class="line2"></div>
+      <div class="container pt-md-41 pb-md-38">
+        <div class="cta mb-md-26">
+          <div class="cta-bg"></div>
+          <div class="cta-title fs-2 fw-bold">加入LOL組隊大師，你可以...</div>
+        </div>
+        <ul class="row justify-content-between">
+          <li
+            class="introItem col-md-4 cta-content d-flex flex-column justify-content-center align-items-center"
+          >
+            <h3
+              class="introTitle text-primary position-absolute start-50 top-35 translate-middle mb-md-6"
+            >
+              建立隊伍
+            </h3>
+            <i
+              class="introIcon fa-solid fa-hand-fist position-absolute start-50 top-60 translate-middle mb-md-6"
+            ></i>
+            <p
+              class="introDesc text-center position-absolute start-50 top-50 translate-middle-x w-80"
+            >
+              提供一個平台，玩家可以根據他們的遊戲需求，如遊玩時間、遊戲模式和技能水平，快速找到合適的隊友。
+            </p>
+            <a
+              href="./buildTeam.html"
+              class="introArrow d-block position-absolute start-50 top-75 translate-middle-x"
+              ><img src="./images/img-arrow.png" alt="arrow"
+            /></a>
+          </li>
+          <li
+            class="introItem col-md-4 cta-content d-flex flex-column justify-content-center align-items-center"
+          >
+            <h3
+              class="introTitle text-primary position-absolute start-50 top-35 translate-middle mb-md-6"
+            >
+              加入隊伍
+            </h3>
+            <i
+              class="introIcon fa-solid fa-people-group position-absolute start-50 top-60 translate-middle mb-md-6"
+            ></i>
+            <p
+              class="introDesc text-center position-absolute start-50 top-50 translate-middle-x w-80"
+            >
+              選擇心儀的隊伍，跟著其他玩家享受遊戲！
+            </p>
+            <a
+              href="./teamList.html"
+              class="introArrow d-block position-absolute start-50 top-75 translate-middle-x"
+              ><img src="./images/img-arrow.png" alt="arrow"
+            /></a>
+          </li>
+          <li
+            class="introItem col-md-4 cta-content d-flex flex-column justify-content-center align-items-center"
+          >
+            <h3
+              class="introTitle text-primary position-absolute start-50 top-35 translate-middle mb-md-6"
+            >
+              認識更多人
+            </h3>
+            <i
+              class="introIcon fa-solid fa-handshake position-absolute start-50 top-60 translate-middle mb-md-6"
+            ></i>
+            <p
+              class="introDesc text-center position-absolute start-50 top-50 translate-middle-x w-80"
+            >
+              來看看都有哪些高手！
+            </p>
+            <a
+              href="./playerList.html"
+              class="introArrow d-block position-absolute start-50 top-75 translate-middle-x"
+              ><img src="./images/img-arrow.png" alt="arrow"
+            /></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <%- include('./layout/footer'); -%> <%- include('./layout/toTopBtn'); -%>
+
+    <script
+      src="https://kit.fontawesome.com/8eab62e458.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/index.js"></script>
+  </body>
+</html>

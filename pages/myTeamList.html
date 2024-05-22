@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隊伍列表</title>
+    <script
+      src="https://kit.fontawesome.com/8eab62e458.js"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+    <div class="container pt-lg-38 mb-31">
+      <!-- <div class="searchGroup d-flex justify-content-between">
+        <div class="searchDropDown d-flex gap-lg-8">
+          <div class="btn-group border border-white">
+            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              讚數
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group border border-white">
+            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              遊戲時間
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+          <div class="btn-group border border-white">
+            <button type="button" class="btn btn-transparent dropdown-toggle" data-bs-toggle="dropdown"
+              aria-expanded="false">
+              牌位
+            </button>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#">Action</a></li>
+              <li><a class="dropdown-item" href="#">Another action</a></li>
+              <li><a class="dropdown-item" href="#">Something else here</a></li>
+              <li>
+                <hr class="dropdown-divider" />
+              </li>
+              <li><a class="dropdown-item" href="#">Separated link</a></li>
+            </ul>
+          </div>
+        </div>
+        <form class="d-flex">
+          <div class="input-group">
+            <input type="search" class="form-control border-end-0" placeholder="What are you looking for?"
+              aria-label="Search" aria-describedby="search-form" />
+            <button class="btn border border-white border-start-0" id="search-form" type="submit">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+      </div> -->
+      <!-- 已加入隊伍 -->
+      <div class="titleImg position-relative mt-lg-18 mb-lg-5">
+        <h2
+          class="position-absolute top-20 start-33 fw-black"
+          style="width: 240px; height: 58px"
+        >
+          已加入隊伍
+        </h2>
+      </div>
+      <div class="swi-father1 position-relative blueShadow">
+        <!-- Slider main container -->
+        <div class="swiper" id="mySwiper1">
+          <div class="swiper-wrapper" id="joinMyTeamList">
+            <!-- 卡片開始 -->
+            <!-- <div class="swiper-slide  bg-dark ">
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                並無建立隊伍
+              </h4>
+            </div> -->
+            <!-- 卡片結束 -->
+          </div>
+        </div>
+
+        <div
+          class="swiper-pagination position-absolute"
+          id="swiper-pagination1"
+          style="bottom: -40px"
+        ></div>
+        <div
+          class="swiper-button-prev position-absolute"
+          id="swiper-button-prev1"
+          style="left: -80px"
+        ></div>
+        <div
+          class="swiper-button-next position-absolute ;"
+          style="right: -80px"
+          id="swiper-button-next1"
+        ></div>
+      </div>
+
+      <!-- 已建立隊伍 -->
+      <div class="titleImg position-relative mt-lg-26 mb-lg-5">
+        <h2
+          class="position-absolute top-20 start-33 fw-black"
+          style="width: 240px; height: 58px"
+        >
+          已建立隊伍
+        </h2>
+      </div>
+      <div class="swi-father2 position-relative greenShadow">
+        <!-- Slider main container -->
+        <div class="swiper" id="mySwiper2">
+          <div class="swiper-wrapper" id="buildMyTeamList">
+            <!-- <div class="swiper-slide  bg-dark ">
+
+              <h4 class="pt-12 fw-black align-middle text-center w-100 p-0" style=" height: 608px">
+                並無建立隊伍
+              </h4>
+            </div> -->
+          </div>
+        </div>
+
+        <div
+          class="swiper-pagination position-absolute"
+          id="swiper-pagination2"
+          style="bottom: -40px"
+        ></div>
+        <div
+          class="swiper-button-prev position-absolute"
+          id="swiper-button-prev2"
+          style="left: -80px"
+        ></div>
+        <div
+          class="swiper-button-next position-absolute ;"
+          style="right: -80px"
+          id="swiper-button-next2"
+        ></div>
+      </div>
+      <div class="mb-25"></div>
+    </div>
+
+    <%- include('./layout/footer'); -%>
+
+    <script type="module" src="../main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script src="../assets/js/myTeamList.js" type="module"></script>
+    <script>
+      //swiper要等網頁載入完再宣告，才能運作
+      window.onload = function () {
+        var swiper = new Swiper('#mySwiper2', {
+          loop: true,
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '#swiper-pagination2',
+            clickable: true,
+          },
+
+          navigation: {
+            nextEl: '#swiper-button-next2',
+            prevEl: '#swiper-button-prev2',
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
+        var swiper = new Swiper('#mySwiper1', {
+          loop: true,
+          slidesPerView: 3,
+          spaceBetween: 30,
+          pagination: {
+            el: '#swiper-pagination1',
+            clickable: true,
+          },
+
+          navigation: {
+            nextEl: '#swiper-button-next1',
+            prevEl: '#swiper-button-prev1',
+          },
+          breakpoints: {
+            0: {
+              slidesPerView: 1,
+            },
+            768: {
+              slidesPerView: 2,
+            },
+            1024: {
+              slidesPerView: 3,
+            },
+          },
+        });
+      };
+    </script>
+  </body>
+</html>

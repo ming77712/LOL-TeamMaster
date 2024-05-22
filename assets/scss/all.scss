@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700;900&family=Roboto+Serif:ital,opsz,wght@0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,900;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,900&display=swap');
+@import '../../node_modules/bootstrap/scss/functions';
+@import './utils/variables';
+@import './utils/maps';
+@import './utils/utilities';
+
+$utilities: map-merge(
+  $utilities,
+  (
+    'cursor': (
+      property: cursor,
+      class: cursor,
+      responsive: true,
+      values: auto pointer grab,
+    ),
+  )
+);
+
+@import '../../node_modules/bootstrap';
+@import '../../node_modules/bootstrap/scss/utilities/api';
+
+@import './mixins/breakpoints';
+@import './utils/base';
+@import './utils/pagination';
+
+@import './layout/toTopBtn';
+@import './layout/header.scss';
+@import './layout/navMenu';
+@import './layout/dropdownTimeSearch';
+@import './layout/footer.scss';
+
+@import './pages/index';
+@import './pages/alreadyJoinedTeam';
+@import './pages/buildTeam';
+@import './pages/editMemberProfile';
+@import './pages/historicalTeamRecords';
+@import './pages/memberCenter';
+@import './pages/myTeamList';
+@import './pages/playerList';
+@import './pages/teamCreated';
+@import './pages/teamDetails';
+@import './pages/teamList';

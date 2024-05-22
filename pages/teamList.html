@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>隊伍列表</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+    />
+  </head>
+
+  <body>
+    <%- include('./layout/header'); -%>
+
+    <div class="container pt-md-38">
+      <div class="searchGroup d-flex justify-content-between">
+        <div class="searchDropDown d-flex gap-lg-8">
+          <div class="btn-group border border-white">
+            <button
+              type="button"
+              class="btn btn-transparent dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              讚數
+            </button>
+            <ul class="dropdown-menu">
+              <li id="thumbDesc">
+                <a class="dropdown-item" href="#">讚數多至少</a>
+              </li>
+              <li id="thumbAsc">
+                <a class="dropdown-item" href="#">讚數少至多</a>
+              </li>
+            </ul>
+          </div>
+          <input
+            id="dateLte"
+            type="text"
+            class="border border-white flatpickr"
+            placeholder="遊戲時間"
+          />
+          <!-- <div class="btn-group border border-white">
+            <button
+              type="button"
+              class="btn btn-transparent dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              遊戲時間
+            </button>
+            <div class="dropdown-menu">
+              <input
+                type="text"
+                class="flatpickr dropdown-item"
+                placeholder="請選擇時間"
+              />
+            </div>
+          </div> -->
+          <div class="btn-group border border-white">
+            <button
+              type="button"
+              class="btn btn-transparent dropdown-toggle"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              牌位
+            </button>
+            <ul id="rankSelect" class="dropdown-menu">
+              <li>
+                <a class="dropdown-item" data-rank="Challenger" href="#"
+                  >菁英</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Grandmaster" href="#"
+                  >宗師</a
+                >
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Master" href="#">大師</a>
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Diamond" href="#">鑽石</a>
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Emerald" href="#">翡翠</a>
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Platinum" href="#">白金</a>
+              </li>
+              <li><a class="dropdown-item" data-rank="Gold" href="#">金</a></li>
+              <li>
+                <a class="dropdown-item" data-rank="Silver" href="#">銀</a>
+              </li>
+              <li>
+                <a class="dropdown-item" data-rank="Bronze" href="#">銅</a>
+              </li>
+              <li><a class="dropdown-item" data-rank="Iron" href="#">鐵</a></li>
+            </ul>
+          </div>
+        </div>
+        <form class="d-flex">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control border-end-0"
+              id="teamQuery"
+              placeholder="What are you looking for?"
+              aria-label="Search"
+              aria-describedby="search-form"
+            />
+            <button
+              class="btn border border-white border-start-0"
+              id="search-form"
+              type="button"
+            >
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <div class="titleParallelogram position-relative mt-md-18 mb-md-5">
+        <h2
+          class="position-absolute top-20 start-33 fw-black fs-11 fs-md-2"
+          style="width: 192px; height: 58px"
+        >
+          隊伍列表
+        </h2>
+      </div>
+      <div class="d-flex flex-wrap" id="teamListBox">
+        <!-- 卡片開始 -->
+      </div>
+      <!-- <div id="data-container"></div> -->
+      <div
+        class="d-flex justify-content-center align-items-center mt-11 mt-md-15 mb-20 mb-md-25"
+        id="pagination"
+      ></div>
+    </div>
+
+    <%- include('./layout/footer'); -%> <%- include('./layout/toTopBtn'); -%>
+
+    <script
+      src="https://kit.fontawesome.com/8eab62e458.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <!-- <script src="https://npmcdn.com/flatpickr@4.6.3/dist/l10n/zh-tw.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.6.0/pagination.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.6.2/axios.min.js"></script>
+    <script>
+      flatpickr('.flatpickr', {
+        altInput: true,
+        // altInputClass: "fp_Month",
+        // locale: "zh_tw",
+        altFormat: 'Y/m/d H:i',
+        enableTime: true,
+        dateFormat: 'Y-m-d H:i',
+        // plugins: [
+        //   new monthSelectPlugin({
+        //     shorthand: true,
+        //     dateFormat: "Ym",
+        //     altFormat: "M/Y",
+        //   }),
+        // ],
+        // defaultDate: $(this).val(),
+      });
+    </script>
+    <script type="module" src="../main.js"></script>
+    <script type="module" src="../assets/js/teamList.js"></script>
+  </body>
+</html>
